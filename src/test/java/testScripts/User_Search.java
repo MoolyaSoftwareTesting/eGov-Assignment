@@ -61,8 +61,8 @@ public class User_Search{
                 .when()
                 .post("/users/v110/_search?userName=ABC")
                 .then()
-                .statusCode(404)
-                .statusLine("HTTP/1.1 404 ")
+                .statusCode(400)
+                .statusLine("HTTP/1.1 400 Bad Request")
                 .assertThat().header("Content-Type", "application/json");
 
     }
