@@ -21,15 +21,4 @@ public class ConfigReader {
         return properties.getProperty("base_url");
     }
 
-    public static String getUsername() {
-        return properties.getProperty("username");
-    }
-
-    public static String getPassword() {
-        return properties.getProperty("password");
-    }
-
-    public static String getTenantId() {
-        return properties.getProperty("tenantID");
-    }
 }
