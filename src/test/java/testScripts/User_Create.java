@@ -90,7 +90,7 @@ public class User_Create{
     }
 
     @Test(groups = {"negative"})
-    public void userCreate_wrongEndPoints(){
+    public void userCreate_withPartialInfo(){
 
         String jsonRequestBody = "{\n" +
                 "  \"RequestInfo\": {\n" +
@@ -108,16 +108,6 @@ public class User_Create{
                 "    {\n" +
                 "      \"tenantId\": \"pg.citya\",\n" +
                 "      \"id\": 0,\n" +
-                "      \"userName\": \"user_{{__randomString(5)}}\",\n" +
-                "      \"salutation\": \"Miss\",\n" +
-                "      \"name\": \"Lata\",\n" +
-                "      \"gender\": \"Female\",\n" +
-                "      \"mobileNumber\": \"9876{{__random(100000, 999999)}}\",\n" +
-                "      \"emailId\": \"lata@abc.com\",\n" +
-                "      \"aadhaarNumber\": \"2\",\n" +
-                "      \"active\": true,\n" +
-                "      \"locale\": \"en_IN\",\n" +
-                "      \"type\": \"string\",\n" +
                 "      \"accountLocked\": false,\n" +
                 "      \"roles\": [\n" +
                 "        {\n" +
@@ -129,14 +119,6 @@ public class User_Create{
                 "        \"firstName\": \"abc_{{__randomString(5)}}\",\n" +
                 "        \"middleName\": \"Ganesh\",\n" +
                 "        \"lastName\": \"Naik\",\n" +
-                "        \"dob\": \"2023-12-27\",\n" +
-                "        \"altContactNumber\": \"string\",\n" +
-                "        \"fatherName\": \"Ganesh\",\n" +
-                "        \"husbandName\": \"string\",\n" +
-                "        \"bloodGroup\": \"str\",\n" +
-                "        \"pan\": \"string\",\n" +
-                "        \"permanentAddress\": \"string\",\n" +
-                "        \"permanentCity\": \"string\",\n" +
                 "        \"permanentPincode\": \"string\",\n" +
                 "        \"correspondenceCity\": \"string\",\n" +
                 "        \"correspondencePincode\": \"string\",\n" +
@@ -155,8 +137,8 @@ public class User_Create{
                 .when()
                 .post("/users/v110/_create")
                 .then()
-                .statusCode(404)
-                .statusLine("HTTP/1.1 404 ")
+                .statusCode(400)
+                .statusLine("HTTP/1.1 400 Bad Request")
                 .assertThat().header("Content-Type", "application/json");
 
     }
