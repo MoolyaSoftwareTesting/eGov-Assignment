@@ -2,14 +2,14 @@
 This project demonstrates the usage of Rest Assured for API testing.
 
 ## Prerequisites
-Java
-Maven installed
-IDE (e.g., IntelliJ, Eclipse)
+    Java
+    Maven installed
+    IDE (e.g., IntelliJ, Eclipse)
 
 ## Getting Started
-Clone the repository: git clone [repository-url]
-Open the project in your preferred IDE.
-Configure project dependencies using Maven.
+    Clone the repository: git clone [repository-url]
+    Open the project in your preferred IDE.
+    Configure project dependencies using Maven.
 
 ## Project Structure
 `src/test/java`: Contains test classes
